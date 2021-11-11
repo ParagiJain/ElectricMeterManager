@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registeration</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel ="stylesheet" type = "text/css" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Electric Meter Manager</h1>
+        <hr>
+        <h2>Signin </h2>
+        <div th:if="${param.logout}">
+        <h5 class="text-center text-success">Logout successfully</h5>
+        </div>
+        <div th:if="${param.error}">
+        <h5 class= "text-danger text-success">Invalid Username and Password  </h5>
+        </div>
+          <form th:action="@{/Signin}" th:object = "${user}" method ="post">
+            <input type="text" th:field = "*{email}" class="input-box" placeholder="Email" required>
+            <input type="password" th:field = "*{password}" class="input-box" placeholder="Password" required>
+            <button type="submit" class="submit-btn">Signin</button>
+          </form>
+          <a href="index" type="button" class="btn" onclick="openRegister()">I'm New Here</a>
+          
+        </div>
+</body>
+</html>

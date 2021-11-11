@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Electric Meter Manager</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Electric Meter Manager</h1>
+        <hr>
+        <h2>Add Data</h2>
+
+        <form action="#" th:action="@{/user/saveMeterData}" th:object="${meterData}" method="POST">
+        <div class = "m-3">
+        	<div class = "form-group row">
+            <label class="col-form-Label col-sm-4">Meter Name</label>
+            	<div class="col-sm-8">
+            		<select th:field = "*{meter}" class="form-control" required>
+            		<th:block th:each= "met : ${listMeter}">
+            		<option th:text = "${met.meterName}" th:value = "${met.id}"></option>
+            		</th:block>
+            		</select>
+            	</div>
+            </div>
+            <div class = "form-group row">
+            <label class="col-form-Label col-sm-4">Month</label>
+            	<div class="col-sm-8">
+            		<input type="text" th:field="*{month}" class="form-control"/>
+            	</div>
+            </div>
+            <div class = "form-group row">
+            <label class="col-form-Label col-sm-4">cost</label>
+            	<div class="col-sm-8">
+            		<input type="text" th:field="*{cost}" class="form-control"/>
+            	</div>
+            </div>
+            <div class = "form-group row">
+            <label class="col-form-Label col-sm-4">Due Date</label>
+            	<div class="col-sm-8">
+            		<input type="date" th:field="*{dueDate}" class="form-control"/>
+            	</div>
+            </div>
+            <div class = "form-group row">
+            <label class="col-form-Label col-sm-4">Payment Date</label>
+            	<div class="col-sm-8">
+            		<input type="date" th:field="*{paymentDate}" class="form-control"/>
+            	</div>
+            </div>
+            <div class = "form-group row">
+            <label class="col-form-Label col-sm-4">Payment Mode</label>
+            	<div class="col-sm-8">
+            		<input type="text" th:field="*{paymentMode}" class="form-control"/>
+            	</div>
+            </div>
+            <div class = "form-group row">
+            <label class="col-form-Label col-sm-4">Payment Id</label>
+            	<div class="col-sm-8">
+            		<input type="text" th:field="*{paymentId}" class="form-control"/>
+            	</div>
+            </div>
+        </div>
+            
+           <!-- <input type="text" th:field="*{meterName}" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{meterNo}" class="form-control mb-4 col-4">-->
+
+
+            <button type="submit" class="btn btn-info col-2"> Save Meter</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{/user/Signin}"> Back to Meter List</a>
+        <a th:href="@{/user/seeHistory}"> History</a>
+    </div>
+</body>
+
+</html>
