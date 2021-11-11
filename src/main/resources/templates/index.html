@@ -5,20 +5,23 @@
 <title>Registeration</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <link rel ="stylesheet" type = "text/css" href = "https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+<link rel = "stylesheet" type ="text/css "th:href="@{/index.css}"
 </head>
 <body>
-    <div class="container">
+ <div>
+    	<div class="headerComponent add">
         <h1>Electric Meter Manager</h1>
-        <hr>
-        <h2>SignUp</h2>
+        </div>
+        <div class="newMeter__body">
+        <div class="newMeter__bodyContent">
           <div th:if = "${session.message}" 
           th:classappend = "${session.message}" class = "alert alert-success"
           role = "alert">
           <p th:text= "${session.message}"></p>
           <th:block th:text = "${#session.removeAttribute('message')}"></th:block>
           </div>
-          <form th:action="@{/saveUser}" th:object="${user}" method ="post">
-         
+          <form th:action="@{/saveUser}" th:object="${user}" method ="post" class="form">
+            <h2>SignUp</h2>
             <input type="text" class="input-box" name= "name" placeholder="Name" required>
             <input type="email" class="input-box" name= "email" placeholder="Email" required>
             <input type="password" class="input-box" name= "password" placeholder="Password" required>
@@ -27,8 +30,11 @@
             <input type="text" class="input-box" name= "city" placeholder="City" required>
             <input type="text" class="input-box" name = "state" placeholder="State" required>
             <button type="submit" class="submit-btn">Sign Up</button>
+         <a href="login" type="button" class="btn" onclick="openLogin()">I've an account</a>
           </form>
-          <a href="login" type="button" class="btn" onclick="openLogin()">I've an account</a>    
+           
+          </div>
+          </div>   
     </div>
 
 <!--<script> 
