@@ -6,15 +6,21 @@
     <title>Electric Meter Manager</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel = "stylesheet" type ="text/css "th:href="@{/index.css}"
 </head>
 
 <body>
+    	<div class="headerComponent add">
+        <h1>Electric Meter Manager</h1>
+        </div>
+    
+    <div class="container my-2 newMeter__body">
+    	<div class="row dash">
+        <a th:href="@{/user/Signin}" class="float-left"> 👈 Back to Dashboard </a>
+        </div>
+        <h2 class="h2">History</h2>
 
-    <div class="container my-2">
-        <h1>Meters Data List</h1>
-
-        <table border="1" class="table table-striped table-responsive-md">
+        <table border="1" class="table table-striped table-responsive-md history_table">
             <thead>
                 <tr>
                 	<th>Meter Name</th>
@@ -38,8 +44,6 @@
             </tbody>
         </table>
     </div>
-    <hr>
-    <a th:href="@{/}"> Back to Dashboard</a>
 </body>
 
 </html>

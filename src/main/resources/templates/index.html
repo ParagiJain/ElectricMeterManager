@@ -28,40 +28,10 @@
             <input type="text" class="input-box" name = "state" placeholder="State" required>
             <button type="submit" class="submit-btn">Sign Up</button>
           </form>
-          <a href="login" type="button" class="btn" onclick="openLogin()">I've an account</a>
-    
+          <a href="login" type="button" class="btn" onclick="openLogin()">I've an account</a>    
     </div>
 
-
-<!--<div class="container">
-    <div class="card">
-      <div class="inner-box" id="card">
-        <div class="card-back" id ="style-3">
-          <h2>SIGNUP</h2>
-          <div th:if = "${session.message}" 
-          th:classappend = "${session.message}" class = "alert alert-success"
-          role = "alert">
-          <p th:text= "${session.message}"></p>
-          <th:block th:text = "${session.removeAttribute('message')}"></th:block>
-          </div>
-          
-          <form th:action="@{/saveUser}" th:object="${user}" method ="post">
-          
-            <input type="text" class="input-box" name= "name" placeholder="Name" required>
-            <input type="email" class="input-box" name= "email" placeholder="Email" required>
-            <input type="password" class="input-box" name= "password" placeholder="Password" required>
-            <input type="text" class="input-box" name= "phone" placeholder="Phone" required>
-            <input type="text" class="input-box" name= "address" placeholder="Address" required>
-            <input type="text" class="input-box" name= "city" placeholder="City" required>
-            <input type="text" class="input-box" name = "state" placeholder="State" required>
-            <button type="submit" class="submit-btn">Sign Up</button>
-          </form>
-          <button type="button" class="btn" onclick="openLogin()">I've an account</button>
-        </div>
-      </div>
-    </div>
-  </div>
-<script> 
+<!--<script> 
 var card = document.getElementById("card");
 
 function openRegister() {
@@ -71,7 +41,6 @@ function openRegister() {
 function openLogin() {
   card.style.transform = "rotateY(0deg)";
 }
-</script>
--->
+</script>-->
 </body>
 </html>
